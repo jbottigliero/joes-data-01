@@ -59,6 +59,13 @@ import { CircleStackIcon } from '@heroicons/react/24/solid';
 
 </SimpleGrid>
 
+
+<Box  p={4} m={4}>
+  <Text>
+     Fusce blandit semper libero eu faucibus. Nullam ut maximus mauris. Vestibulum dictum urna id justo elementum, a rutrum ante interdum. Mauris dignissim posuere tortor et congue. Nulla eleifend lacus a turpis cursus, quis porttitor tortor iaculis. Duis luctus nisi sed nibh vulputate interdum. Phasellus et tortor erat. Integer rutrum mollis massa, in lobortis nisi ultrices at. Suspendisse et mi non ipsum interdum convallis at id sapien. Curabitur nec risus mattis, rutrum nibh in, venenatis turpis. In quis tempus purus. Integer vel arcu ullamcorper, aliquam lorem sit amet, sodales tellus.
+  </Text>
+</Box>
+
 <hr />
 
 <Center>
@@ -81,6 +88,7 @@ export function HelpDrawer() {
         Need Help?
       </Button>
       <Drawer
+        size='md'
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
@@ -92,12 +100,12 @@ export function HelpDrawer() {
           <DrawerHeader>Help</DrawerHeader>
 
           <DrawerBody>
+
             <Text>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim. Curabitur ligula erat, euismod id rutrum vel, pretium nec orci. Ut risus dui, vulputate a sapien sed, pellentesque dignissim tellus. Aliquam sagittis quam sit amet ligula ultricies semper.
             </Text>
             
-
-            Contact support@globus.org, or submit an issue below.
+            <Text my={2}>Contact support@globus.org, or submit an issue below.</Text>
             
             <Textarea placeholder='Describe your question or issue...' />
           </DrawerBody>
@@ -106,7 +114,7 @@ export function HelpDrawer() {
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button>Submit</Button>
+            <Button onClick={onClose}>Submit</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
