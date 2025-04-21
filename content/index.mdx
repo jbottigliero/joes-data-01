@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Flex, 
   Spacer,
@@ -49,32 +50,8 @@ Start by downloading data files from the portal...
   
 
 
-  <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-    Open
-  </Button>
-  <Drawer
-    isOpen={isOpen}
-    placement='right'
-    onClose={onClose}
-    finalFocusRef={btnRef}
-  >
-    <DrawerOverlay />
-    <DrawerContent>
-      <DrawerCloseButton />
-      <DrawerHeader>Help</DrawerHeader>
-
-      <DrawerBody>
-        
-        ### Need Help?
-        - Contact support@globus.org!
-    
-        <Textarea placeholder='Ask a question...' />
-    
-      </DrawerBody>
-
-    </DrawerContent>
-  </Drawer>
-
+  ### Need Help?
+  <HelpDrawer />
 </Box>
 
 </SimpleGrid>
@@ -88,3 +65,44 @@ Start by downloading data files from the portal...
 </Center>
 
 <hr />
+
+
+
+export function HelpDrawer() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = React.useRef()
+
+  return (
+    <>
+      <Button ref={btnRef} colorScheme='teal' onClick={onOpen} my={4}>
+        Open Drawer
+      </Button>
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Help</DrawerHeader>
+
+          <DrawerBody>
+            Contact support@globus.org, or submit an issue below.
+
+            
+            <Textarea placeholder='Describe your question or issue...' />
+          </DrawerBody>
+
+          <DrawerFooter>
+            <Button variant='outline' mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button>Submit</Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </>
+  )
+}
