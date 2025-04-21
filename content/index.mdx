@@ -111,14 +111,14 @@ export function HelpDrawer() {
 
             <Alert status='warning'>
               <AlertIcon />
-              This form is for placement only – no information is preserved beyond your browser's local state or shared.
+              This form is for placement only – no information is preserved (or shared) beyond your browser's local state.
             </Alert>
 
-            <Text>
+            <Text my={2}>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim. Curabitur ligula erat, euismod id rutrum vel, pretium nec orci. Ut risus dui, vulputate a sapien sed, pellentesque dignissim tellus. Aliquam sagittis quam sit amet ligula ultricies semper.
             </Text>
             
-            <Text my={2}>Contact support@globus.org, or submit an issue below.</Text>
+            <Text my={2}>Contact <a href="mailto:support@globus.org">support@globus.org</a>, or submit an issue below.</Text>
             
             <Textarea placeholder='Describe your question or issue...' />
 
