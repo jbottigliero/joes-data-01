@@ -9,6 +9,7 @@ import {
   Box,
   Button,
   Textarea,
+  Icon,
   Drawer,
   DrawerBody,
   DrawerFooter,
@@ -18,10 +19,11 @@ import {
   DrawerCloseButton,
   useDisclosure
 } from '@chakra-ui/react';
+import { CircleStack } from '@heroicons/react/24/outline'
 
 <Flex>
   <Box p={4} m={4}>
-    ![](/img/logo.png)
+    <Icon as={CircleStack} boxSize={6} />
   </Box>
   <Spacer />
   <Box>
