@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Alert,
+  AlertIcon,
   Flex, 
   Spacer,
   Image,
@@ -38,7 +40,7 @@ import { CircleStackIcon } from '@heroicons/react/24/solid';
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim.
 
   <Box boxSize="sm">
-    <Image src="/nasa-1lfI7wkGWZ4-unsplash.jpg" />
+    <Image src="/joes-data-01/nasa-1lfI7wkGWZ4-unsplash.jpg" />
   </Box>
   
 
@@ -78,8 +80,18 @@ import { CircleStackIcon } from '@heroicons/react/24/solid';
 
 
 export function HelpDrawer() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+  const [data, setData] = React.useState(false);
+  const [isPending, setPending] React.useState(false);
+
+  function handleSubmit() {
+    setPending(true);
+    setData(false);
+    setTimeout(function() {
+      setData(true);
+    }, 500);
+  }
 
   return (
     <>
@@ -100,6 +112,11 @@ export function HelpDrawer() {
 
           <DrawerBody>
 
+          <Alert status='warning'>
+            <AlertIcon />
+            This form is for placement only – no information is preserved beyond your browser's local state or shared.
+          </Alert>
+
             <Text>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim. Curabitur ligula erat, euismod id rutrum vel, pretium nec orci. Ut risus dui, vulputate a sapien sed, pellentesque dignissim tellus. Aliquam sagittis quam sit amet ligula ultricies semper.
             </Text>
@@ -107,13 +124,18 @@ export function HelpDrawer() {
             <Text my={2}>Contact support@globus.org, or submit an issue below.</Text>
             
             <Textarea placeholder='Describe your question or issue...' />
+
+            {data ? (
+              <Text my={2}>Really, this form doesn't do anything...</Text>
+            ) : null }
+
           </DrawerBody>
 
           <DrawerFooter>
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button onClick={onClose}>Submit</Button>
+            <Button onClick={handleSubmit}>Submit</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
