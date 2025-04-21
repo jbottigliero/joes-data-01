@@ -1,1 +1,88 @@
-# Welcome to my data portal!
+import {
+  Flex, 
+  Spacer,
+  Image,
+  Center,
+  SimpleGrid,
+  Box,
+  Textarea,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton
+} from '@chakra-ui/react';
+
+<Flex>
+  <Box p={4} m={4}>
+    ![](/img/logo.png)
+  </Box>
+  <Spacer />
+  <Box>
+  # Welcome to the Joe's Data Portal
+
+  If you are new to [Globus](https://www.globus.org] or have questions, please see the "Getting Started" section below. Otherwise, to download datasets, click Sign In above to authenticate into Globus using your organizational login!
+  </Box>
+</Flex>
+
+<hr />
+
+<SimpleGrid columns={2} spacing={10}>
+
+<Box>
+  ## Getting Started
+
+Start by downloading data files from the portal...
+
+</Box>
+
+<Box>
+  ## Documentation
+  
+  ### General Instructions
+  - [Globus Documentation](https://docs.globus.org/)
+  - [Globus : Portals](https://www.globus.org/portals)
+  
+
+
+  <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+    Open
+  </Button>
+  <Drawer
+    isOpen={isOpen}
+    placement='right'
+    onClose={onClose}
+    finalFocusRef={btnRef}
+  >
+    <DrawerOverlay />
+    <DrawerContent>
+      <DrawerCloseButton />
+      <DrawerHeader>Help</DrawerHeader>
+
+      <DrawerBody>
+        
+        ### Need Help?
+        - Contact support@globus.org!
+    
+        <Textarea placeholder='Ask a question...' />
+    
+      </DrawerBody>
+
+    </DrawerContent>
+  </Drawer>
+
+</Box>
+
+</SimpleGrid>
+
+<hr />
+
+<Center>
+  <Text fontSize="sm" as="span">
+  This is an example portal that was shown as a demonstration during [GlobusWorld 2025](https://www.globusworld.org/).
+  </Text>
+</Center>
+
+<hr />
