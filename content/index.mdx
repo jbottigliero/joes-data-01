@@ -83,7 +83,7 @@ export function HelpDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [data, setData] = React.useState(false);
-  const [isPending, setPending] React.useState(false);
+  const [isPending, setPending] = React.useState(false);
 
   function handleSubmit() {
     setPending(true);
