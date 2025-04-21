@@ -8,6 +8,7 @@
     "version": "1.0.0",
     "attributes": {
       "content": {
+        "title": "Joe's Data Portal",
         "image": "/nasa-V4ZksNimxLk-unsplash.jpg"
       },
       "globus": {
