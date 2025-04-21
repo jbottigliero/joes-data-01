@@ -27,7 +27,7 @@ import {
   <Box>
   # Welcome to the Joe's Data Portal
 
-  If you are new to [Globus](https://www.globus.org] or have questions, please see the "Getting Started" section below. Otherwise, to download datasets, click Sign In above to authenticate into Globus using your organizational login!
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim. Curabitur ligula erat, euismod id rutrum vel, pretium nec orci. Ut risus dui, vulputate a sapien sed, pellentesque dignissim tellus. Aliquam sagittis quam sit amet ligula ultricies semper. Integer vehicula vehicula ante, elementum ullamcorper ex iaculis et. Nunc rhoncus placerat dui non condimentum. Suspendisse imperdiet lectus vel augue porta sagittis. Curabitur tincidunt tristique venenatis.
   </Box>
 </Flex>
 
@@ -38,20 +38,20 @@ import {
 <Box>
   ## Getting Started
 
-Start by downloading data files from the portal...
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim.
 
 </Box>
 
 <Box>
-  ## Documentation
-  
-  ### General Instructions
+  ## Resources
+
+  Nulla tincidunt, mi porta accumsan lobortis, lectus mi pellentesque enim, quis malesuada enim arcu non erat. Integer molestie urna eget mattis cursus.
+
+  - [Globus](https://www.globus.org)
+  - [Globus Web Application](https://app.globus.org)
   - [Globus Documentation](https://docs.globus.org/)
   - [Globus : Portals](https://www.globus.org/portals)
-  
 
-
-  ### Need Help?
   <HelpDrawer />
 </Box>
 
@@ -75,8 +75,8 @@ export function HelpDrawer() {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen} my={4}>
-        Open Drawer
+      <Button ref={btnRef} size='sm' onClick={onOpen} my={4}  variant='ghost'>
+        Need Help?
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -90,8 +90,12 @@ export function HelpDrawer() {
           <DrawerHeader>Help</DrawerHeader>
 
           <DrawerBody>
-            Contact support@globus.org, or submit an issue below.
+            <Text>
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor libero, at congue enim. Curabitur ligula erat, euismod id rutrum vel, pretium nec orci. Ut risus dui, vulputate a sapien sed, pellentesque dignissim tellus. Aliquam sagittis quam sit amet ligula ultricies semper.
+            </Text>
+            
 
+            Contact support@globus.org, or submit an issue below.
             
             <Textarea placeholder='Describe your question or issue...' />
           </DrawerBody>
